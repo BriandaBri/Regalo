@@ -8,9 +8,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,13 +23,21 @@
         }
 
         body {
+
             min-height: 100vh;
+
             font-family: "Montserrat", sans-serif;
+
             color: #4c255c;
+
             overflow-x: hidden;
 
             background:
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 35%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,.9),
+                    transparent 35%
+                ),
                 linear-gradient(
                     135deg,
                     #f4e9fb 0%,
@@ -33,10 +46,15 @@
                 );
         }
 
-        /* FOTO GRANDE DE FONDO */
+
+        /* =========================
+           FOTO GRANDE DE FONDO
+           ========================= */
 
         .background-photo {
+
             position: fixed;
+
             top: 0;
             right: 0;
 
@@ -48,45 +66,73 @@
 
             opacity: 0.23;
 
-            mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 35%
-            );
+            mask-image:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    black 35%
+                );
 
-            -webkit-mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 35%
-            );
+            -webkit-mask-image:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    black 35%
+                );
 
             z-index: 0;
         }
 
+
+        /* =========================
+           PÁGINA
+           ========================= */
+
         .page {
+
             position: relative;
+
             z-index: 1;
 
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
             padding: 70px 25px 60px;
         }
 
-        /* CABECERA */
+
+        /* =========================
+           CABECERA
+           ========================= */
 
         .hero {
+
             width: min(950px, 100%);
+
             text-align: center;
         }
 
+
         h1 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(4rem, 9vw, 7rem);
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    4rem,
+                    9vw,
+                    7rem
+                );
+
             font-weight: 600;
+
             font-style: italic;
 
             line-height: .9;
@@ -95,48 +141,84 @@
 
             margin-bottom: 25px;
 
-            text-shadow: 0 3px 15px rgba(90, 40, 110, .12);
+            text-shadow:
+                0 3px 15px
+                rgba(90,40,110,.12);
         }
 
+
         .subtitle {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-style: italic;
-            font-size: clamp(1.65rem, 3vw, 2.2rem);
+
+            font-size:
+                clamp(
+                    1.65rem,
+                    3vw,
+                    2.2rem
+                );
+
             font-weight: 600;
 
             margin-bottom: 10px;
         }
 
+
         .description {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    1.3rem,
+                    2.4vw,
+                    1.7rem
+                );
+
             font-style: italic;
 
             max-width: 760px;
+
             margin: 0 auto;
 
             line-height: 1.35;
         }
 
+
         .divider {
+
             width: 170px;
+
             height: 1px;
 
             margin: 27px auto;
 
-            background: linear-gradient(
-                to right,
-                transparent,
-                #9362a7,
-                transparent
-            );
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #9362a7,
+                    transparent
+                );
         }
 
-        /* PLAN DEL DÍA */
+
+        /* =========================
+           PLAN DEL DÍA
+           ========================= */
 
         .plans {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             gap: 25px;
@@ -146,49 +228,78 @@
             flex-wrap: wrap;
         }
 
+
         .plan {
+
             width: 190px;
 
             text-align: center;
         }
 
+
         .icon-circle {
+
             width: 95px;
+
             height: 95px;
 
-            margin: 0 auto 13px;
+            margin:
+                0 auto 13px;
 
-            border: 1px solid rgba(110, 55, 135, .25);
+            border:
+                1px solid
+                rgba(110,55,135,.25);
+
             border-radius: 50%;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             font-size: 2.5rem;
 
-            background: rgba(255,255,255,.3);
+            background:
+                rgba(255,255,255,.3);
 
-            backdrop-filter: blur(5px);
+            backdrop-filter:
+                blur(5px);
         }
 
+
         .plan h3 {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-style: italic;
 
             font-size: 1.55rem;
         }
 
+
         .plus {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-size: 2.8rem;
+
             color: #a271ad;
         }
 
-        /* CARTEL ADDAMS */
+
+        /* =========================
+           CARTEL ADDAMS
+           ========================= */
 
         .poster img {
+
             width: 165px;
+
             height: 230px;
 
             object-fit: cover;
@@ -196,68 +307,121 @@
             border-radius: 15px;
 
             box-shadow:
-                0 18px 40px rgba(60, 20, 75, .25);
+                0 18px 40px
+                rgba(60,20,75,.25);
         }
 
+
         .poster p {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-style: italic;
+
             font-size: 1.3rem;
 
             margin-top: 10px;
         }
 
-        /* TEXTO DE LA FECHA */
+
+        /* =========================
+           FRASE FECHA
+           ========================= */
 
         .date-intro {
-            margin: 20px auto 30px;
+
+            margin:
+                20px auto
+                30px;
+
             max-width: 720px;
 
             text-align: center;
 
-            font-family: "Cormorant Garamond", serif;
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-style: italic;
 
-            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-size:
+                clamp(
+                    1.3rem,
+                    2vw,
+                    1.6rem
+                );
 
             line-height: 1.4;
         }
 
-        /* TARJETA CALENDARIO */
+
+        /* =========================
+           TARJETA CALENDARIO
+           ========================= */
 
         .date-card {
-            width: min(720px, 100%);
+
+            width:
+                min(
+                    720px,
+                    100%
+                );
 
             padding: 35px;
 
-            border: 1px solid rgba(255,255,255,.7);
+            border:
+                1px solid
+                rgba(255,255,255,.7);
+
             border-radius: 30px;
 
-            background: rgba(255,255,255,.42);
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .42
+                );
 
-            backdrop-filter: blur(15px);
+            backdrop-filter:
+                blur(15px);
 
             box-shadow:
-                0 20px 60px rgba(75, 30, 95, .12);
+                0 20px 60px
+                rgba(75,30,95,.12);
 
             text-align: center;
         }
 
+
         .date-card h2 {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-style: italic;
+
             font-size: 2.5rem;
 
             margin-bottom: 5px;
         }
 
+
         .date-card > p {
+
             opacity: .8;
+
             margin-bottom: 25px;
         }
 
+
         .calendar {
+
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
@@ -265,69 +429,123 @@
             gap: 18px;
         }
 
+
         input[type="date"] {
-            width: min(350px, 100%);
 
-            padding: 15px 20px;
+            width:
+                min(
+                    350px,
+                    100%
+                );
 
-            font-family: "Montserrat", sans-serif;
+            padding:
+                15px 20px;
+
+            font-family:
+                "Montserrat",
+                sans-serif;
+
             font-size: 1rem;
 
             color: #542561;
 
-            border: 1px solid rgba(103, 55, 120, .25);
+            border:
+                1px solid
+                rgba(103,55,120,.25);
+
             border-radius: 15px;
 
-            background: rgba(255,255,255,.7);
+            background:
+                rgba(255,255,255,.7);
 
             outline: none;
         }
 
+
         input[type="date"]:focus {
-            border-color: #9653aa;
-            box-shadow: 0 0 0 4px rgba(150,83,170,.1);
+
+            border-color:
+                #9653aa;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(150,83,170,.1);
         }
 
+
         textarea {
-            width: min(520px, 100%);
+
+            width:
+                min(
+                    520px,
+                    100%
+                );
+
             min-height: 85px;
 
             resize: vertical;
 
             padding: 15px;
 
-            font-family: "Montserrat", sans-serif;
+            font-family:
+                "Montserrat",
+                sans-serif;
 
-            border: 1px solid rgba(103,55,120,.2);
+            border:
+                1px solid
+                rgba(103,55,120,.2);
+
             border-radius: 15px;
 
-            background: rgba(255,255,255,.6);
+            background:
+                rgba(255,255,255,.6);
 
             outline: none;
         }
 
+
         textarea:focus {
-            border-color: #9653aa;
+
+            border-color:
+                #9653aa;
         }
 
+
+        /* =========================
+           WHATSAPP
+           ========================= */
+
         .whatsapp {
+
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             gap: 10px;
 
-            width: min(370px, 100%);
+            width:
+                min(
+                    370px,
+                    100%
+                );
 
-            padding: 15px 20px;
+            padding:
+                15px 20px;
 
             margin-top: 5px;
 
             border: none;
+
             border-radius: 50px;
 
-            font-family: "Montserrat", sans-serif;
+            font-family:
+                "Montserrat",
+                sans-serif;
+
             font-size: 1rem;
+
             font-weight: 600;
 
             color: white;
@@ -342,22 +560,32 @@
             cursor: pointer;
 
             box-shadow:
-                0 10px 25px rgba(37, 211, 102, .25);
+                0 10px 25px
+                rgba(37,211,102,.25);
 
             transition:
                 transform .2s ease,
                 box-shadow .2s ease;
         }
 
+
         .whatsapp:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
 
             box-shadow:
-                0 14px 30px rgba(37, 211, 102, .32);
+                0 14px 30px
+                rgba(37,211,102,.32);
         }
 
+
         .heart {
-            font-family: "Cormorant Garamond", serif;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
             font-size: 2rem;
 
             margin-top: 30px;
@@ -365,116 +593,201 @@
             opacity: .75;
         }
 
+
+        /* =========================
+           FRASE FINAL
+           ========================= */
+
         footer {
+
             margin-top: 45px;
 
-            font-family: "Cormorant Garamond", serif;
-            font-style: italic;
-            font-size: 1.3rem;
+            font-family:
+                "Cormorant Garamond",
+                serif;
 
-            opacity: .75;
+            font-style: italic;
+
+            font-size: 1.8rem;
+
+            font-weight: 600;
+
+            color: #602c72;
+
+            opacity: .85;
         }
 
-        /* MÓVIL */
+
+        /* =========================
+           MÓVIL
+           ========================= */
 
         @media (max-width: 700px) {
 
             .background-photo {
+
                 width: 100%;
+
                 height: 60vh;
 
                 opacity: .13;
 
-                mask-image: linear-gradient(
-                    to bottom,
-                    black,
-                    transparent
-                );
+                mask-image:
+                    linear-gradient(
+                        to bottom,
+                        black,
+                        transparent
+                    );
 
-                -webkit-mask-image: linear-gradient(
-                    to bottom,
-                    black,
-                    transparent
-                );
+                -webkit-mask-image:
+                    linear-gradient(
+                        to bottom,
+                        black,
+                        transparent
+                    );
             }
 
+
             .page {
+
                 padding-top: 45px;
             }
 
+
             .plans {
+
                 gap: 15px;
             }
 
+
             .plus {
+
                 display: none;
             }
 
+
             .plan {
+
                 width: 140px;
             }
 
+
             .poster {
+
                 width: 100%;
+
                 order: 3;
             }
 
+
             .poster img {
+
                 width: 145px;
+
                 height: 205px;
             }
 
+
             .date-card {
-                padding: 28px 18px;
+
+                padding:
+                    28px 18px;
             }
+
         }
 
     </style>
 </head>
 
+
 <body>
 
-    <!-- Vuestra foto -->
+
+    <!-- =========================
+         FOTO DE VOSOTRAS
+         ========================= -->
+
     <img
         src="img/mama-y-yo.jpg"
         alt=""
         class="background-photo"
     >
 
+
     <main class="page">
+
+
+        <!-- =========================
+             PRESENTACIÓN
+             ========================= -->
 
         <section class="hero">
 
-            <h1>¡Feliz cumpleaños!</h1>
+
+            <h1>
+                ¡Feliz cumpleaños!
+            </h1>
+
 
             <div class="divider"></div>
 
+
             <p class="subtitle">
+
                 ¡Nos vamos a pasar un día de regalo!
+
             </p>
+
 
             <p class="description">
+
                 Te espera un masaje relajante,
-                una visita a <strong>La familia Addams: El musical</strong>
-                y, para terminar, una cena por Madrid 🍽️✨
+                una visita a
+                <strong>
+                    La familia Addams: El musical
+                </strong>
+
+                y, para terminar,
+                una cena por Madrid 🍽️✨
+
             </p>
 
+
+            <!-- =========================
+                 PLANES
+                 ========================= -->
 
             <div class="plans">
 
+
+                <!-- MASAJE -->
+
                 <div class="plan">
+
                     <div class="icon-circle">
+
                         🌸
+
                     </div>
 
+
                     <h3>
+
                         Masaje relajante
+
                     </h3>
+
                 </div>
 
 
-                <div class="plus">+</div>
+                <div class="plus">
 
+                    +
+
+                </div>
+
+
+                <!-- ADDAMS -->
 
                 <div class="poster">
 
@@ -483,58 +796,100 @@
                         alt="La familia Addams: El musical"
                     >
 
+
                     <p>
+
                         La familia Addams
+
                     </p>
 
                 </div>
 
 
-                <div class="plus">+</div>
+                <div class="plus">
 
+                    +
+
+                </div>
+
+
+                <!-- CENA -->
 
                 <div class="plan">
 
                     <div class="icon-circle">
+
                         🍷
+
                     </div>
 
+
                     <h3>
+
                         Cena por Madrid
+
                     </h3>
 
                 </div>
 
+
             </div>
 
 
+            <!-- =========================
+                 TEXTO ELECCIÓN
+                 ========================= -->
+
             <p class="date-intro">
 
-                Entre flamencos y taichíes no sabía decir
-                cuándo te venía mejor...
+                Entre flamencos y taichíes
+                no sabía decir cuándo
+                te venía mejor...
 
-                <br>
+                <br><br>
 
                 así que esta parte
-                <strong>te toca a ti.</strong> ♡
+
+                <strong>
+                    te toca a ti.
+                </strong>
+
+                ♡
 
             </p>
+
 
         </section>
 
 
+        <!-- =========================
+             CALENDARIO
+             ========================= -->
+
         <section class="date-card">
 
+
             <h2>
+
                 Elige tu día
+
             </h2>
 
+
             <p>
-                Tienes los próximos 20 días para elegir nuestra aventura.
+
+                Elige la fecha que mejor te venga.
+
             </p>
 
 
             <div class="calendar">
+
+
+                <!--
+                    SIN MIN NI MAX.
+                    Puede elegir cualquier fecha.
+                -->
 
                 <input
                     type="date"
@@ -559,83 +914,63 @@
 
                 </button>
 
+
             </div>
 
 
             <div class="heart">
+
                 ♡
+
             </div>
+
 
         </section>
 
 
+        <!-- =========================
+             FRASE FINAL
+             ========================= -->
+
         <footer>
 
-            Porque los mejores regalos
-            no caben en una caja.
+            Te quiero mucho 💜
 
         </footer>
+
 
     </main>
 
 
     <script>
 
-        /*
-         * CONFIGURAMOS EL CALENDARIO
-         * Solo permite elegir desde hoy
-         * hasta dentro de 20 días.
-         */
-
-        const fechaInput = document.getElementById("fecha");
-
-        const hoy = new Date();
-
-        const fechaMaxima = new Date();
-
-        fechaMaxima.setDate(
-            hoy.getDate() + 20
-        );
-
-
-        function convertirFechaHTML(fecha) {
-
-            const year =
-                fecha.getFullYear();
-
-            const month =
-                String(fecha.getMonth() + 1)
-                    .padStart(2, "0");
-
-            const day =
-                String(fecha.getDate())
-                    .padStart(2, "0");
-
-
-            return `${year}-${month}-${day}`;
-
-        }
-
-
-        fechaInput.min =
-            convertirFechaHTML(hoy);
-
-        fechaInput.max =
-            convertirFechaHTML(fechaMaxima);
-
-
-        /*
-         * ENVÍO POR WHATSAPP
-         */
-
         function enviarWhatsApp() {
 
+
+            /*
+             * FECHA ELEGIDA
+             */
+
             const fecha =
-                document.getElementById("fecha").value;
+                document
+                    .getElementById("fecha")
+                    .value;
+
+
+            /*
+             * MENSAJE OPCIONAL
+             */
 
             const mensajeExtra =
-                document.getElementById("mensaje").value.trim();
+                document
+                    .getElementById("mensaje")
+                    .value
+                    .trim();
 
+
+            /*
+             * COMPROBAMOS QUE HAYA FECHA
+             */
 
             if (!fecha) {
 
@@ -648,13 +983,15 @@
 
 
             /*
-             * Convertimos:
+             * CONVERTIMOS LA FECHA
              *
-             * 2026-09-20
+             * Ejemplo:
              *
-             * en
+             * 2026-09-21
              *
-             * domingo, 20 de septiembre
+             * pasa a:
+             *
+             * lunes, 21 de septiembre
              */
 
             const fechaElegida =
@@ -664,23 +1001,37 @@
 
 
             const fechaBonita =
-                fechaElegida.toLocaleDateString(
-                    "es-ES",
-                    {
-                        weekday: "long",
-                        day: "numeric",
-                        month: "long"
-                    }
-                );
+                fechaElegida
+                    .toLocaleDateString(
+                        "es-ES",
+                        {
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    );
 
+
+            /*
+             * MENSAJE DE WHATSAPP
+             */
 
             let texto =
 `💜 ¡Ya he elegido fecha para mi regalo!
 
 📅 Me viene bien el ${fechaBonita}.
 
-Masaje + La familia Addams + cena por Madrid ✨`;
+🌸 Masaje relajante
+🎭 La familia Addams
+🍷 Cena por Madrid
 
+✨ ¡Planazo!`;
+
+
+            /*
+             * AÑADIMOS MENSAJE OPCIONAL
+             */
 
             if (mensajeExtra) {
 
@@ -691,7 +1042,7 @@ Masaje + La familia Addams + cena por Madrid ✨`;
 
 
             /*
-             * Tu número:
+             * TU NÚMERO:
              *
              * +34 664 100 331
              */
@@ -700,12 +1051,20 @@ Masaje + La familia Addams + cena por Madrid ✨`;
                 "34664100331";
 
 
+            /*
+             * GENERAMOS EL ENLACE
+             */
+
             const url =
                 "https://wa.me/"
                 + telefono
                 + "?text="
                 + encodeURIComponent(texto);
 
+
+            /*
+             * ABRIMOS WHATSAPP
+             */
 
             window.open(
                 url,
@@ -715,6 +1074,7 @@ Masaje + La familia Addams + cena por Madrid ✨`;
         }
 
     </script>
+
 
 </body>
 </html>
