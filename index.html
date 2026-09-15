@@ -22,37 +22,43 @@
             padding: 0;
         }
 
-        body {
+        :root {
+            --purple-dark: #4b135c;
+            --purple: #744287;
+            --purple-medium: #9362a7;
+            --purple-light: #dfc8eb;
+            --purple-pale: #f4e9fb;
+            --white-glass: rgba(255,255,255,.52);
+            --green: #25D366;
+        }
 
+        body {
             min-height: 100vh;
 
             font-family: "Montserrat", sans-serif;
-
             color: #4c255c;
 
             overflow-x: hidden;
 
             background:
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(255,255,255,.9),
+                    circle at 20% 15%,
+                    rgba(255,255,255,.95),
                     transparent 35%
                 ),
                 linear-gradient(
                     135deg,
-                    #f4e9fb 0%,
-                    #e8d0f4 45%,
-                    #d9b4eb 100%
+                    #f6edfb 0%,
+                    #ead6f4 45%,
+                    #d8b5e9 100%
                 );
         }
 
-
         /* =========================
-           FOTO GRANDE DE FONDO
+           FOTO DE FONDO
            ========================= */
 
         .background-photo {
-
             position: fixed;
 
             top: 0;
@@ -64,65 +70,70 @@
             object-fit: cover;
             object-position: center;
 
-            opacity: 0.23;
-
-            mask-image:
-                linear-gradient(
-                    to right,
-                    transparent,
-                    black 35%
-                );
+            opacity: .22;
 
             -webkit-mask-image:
                 linear-gradient(
                     to right,
-                    transparent,
-                    black 35%
+                    transparent 0%,
+                    rgba(0,0,0,.35) 22%,
+                    black 60%
+                );
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,.35) 22%,
+                    black 60%
                 );
 
             z-index: 0;
         }
 
+        .background-message {
+            position: fixed;
+
+            right: 5%;
+            bottom: 6%;
+
+            z-index: 1;
+
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+
+            color: rgba(75,19,92,.65);
+
+            transform: rotate(-4deg);
+
+            pointer-events: none;
+        }
 
         /* =========================
-           PÁGINA
+           CONTENIDO
            ========================= */
 
         .page {
-
             position: relative;
-
-            z-index: 1;
+            z-index: 2;
 
             min-height: 100vh;
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
 
-            padding: 70px 25px 60px;
+            padding: 65px 24px 70px;
         }
 
-
-        /* =========================
-           CABECERA
-           ========================= */
-
         .hero {
-
-            width: min(950px, 100%);
-
+            width: min(1000px, 100%);
             text-align: center;
         }
 
-
         h1 {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-family: "Cormorant Garamond", serif;
 
             font-size:
                 clamp(
@@ -132,34 +143,43 @@
                 );
 
             font-weight: 600;
-
             font-style: italic;
 
-            line-height: .9;
+            line-height: .92;
 
-            color: #4b135c;
+            color: var(--purple-dark);
 
-            margin-bottom: 25px;
+            margin-bottom: 24px;
 
             text-shadow:
-                0 3px 15px
+                0 4px 18px
                 rgba(90,40,110,.12);
         }
 
+        .divider {
+            width: 180px;
+            height: 1px;
+
+            margin: 25px auto;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    var(--purple-medium),
+                    transparent
+                );
+        }
 
         .subtitle {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-family: "Cormorant Garamond", serif;
 
             font-style: italic;
-
             font-size:
                 clamp(
-                    1.65rem,
+                    1.7rem,
                     3vw,
-                    2.2rem
+                    2.25rem
                 );
 
             font-weight: 600;
@@ -167,139 +187,90 @@
             margin-bottom: 10px;
         }
 
-
         .description {
+            font-family: "Cormorant Garamond", serif;
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-style: italic;
 
             font-size:
                 clamp(
                     1.3rem,
-                    2.4vw,
+                    2.3vw,
                     1.7rem
                 );
 
-            font-style: italic;
+            line-height: 1.45;
 
-            max-width: 760px;
-
-            margin: 0 auto;
-
-            line-height: 1.35;
+            max-width: 780px;
+            margin: auto;
         }
-
-
-        .divider {
-
-            width: 170px;
-
-            height: 1px;
-
-            margin: 27px auto;
-
-            background:
-                linear-gradient(
-                    to right,
-                    transparent,
-                    #9362a7,
-                    transparent
-                );
-        }
-
 
         /* =========================
-           PLAN DEL DÍA
+           PLANES
            ========================= */
 
         .plans {
-
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            gap: 25px;
-
-            margin: 45px auto;
+            gap: 26px;
 
             flex-wrap: wrap;
+
+            margin: 45px auto 40px;
         }
 
-
         .plan {
-
-            width: 190px;
+            width: 185px;
 
             text-align: center;
         }
 
-
         .icon-circle {
+            width: 96px;
+            height: 96px;
 
-            width: 95px;
+            margin: 0 auto 13px;
 
-            height: 95px;
-
-            margin:
-                0 auto 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             border:
                 1px solid
-                rgba(110,55,135,.25);
+                rgba(110,55,135,.22);
 
             border-radius: 50%;
 
-            display: flex;
+            background:
+                rgba(255,255,255,.38);
 
-            align-items: center;
-
-            justify-content: center;
+            backdrop-filter: blur(8px);
 
             font-size: 2.5rem;
-
-            background:
-                rgba(255,255,255,.3);
-
-            backdrop-filter:
-                blur(5px);
         }
 
-
-        .plan h3 {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+        .plan h3,
+        .poster p {
+            font-family: "Cormorant Garamond", serif;
 
             font-style: italic;
 
-            font-size: 1.55rem;
+            font-size: 1.5rem;
         }
 
-
         .plus {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-family: "Cormorant Garamond", serif;
 
             font-size: 2.8rem;
 
             color: #a271ad;
         }
 
-
-        /* =========================
-           CARTEL ADDAMS
-           ========================= */
-
         .poster img {
-
             width: 165px;
-
             height: 230px;
 
             object-fit: cover;
@@ -308,180 +279,562 @@
 
             box-shadow:
                 0 18px 40px
-                rgba(60,20,75,.25);
+                rgba(60,20,75,.24);
         }
 
-
         .poster p {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
-
-            font-style: italic;
-
-            font-size: 1.3rem;
-
             margin-top: 10px;
         }
 
-
         /* =========================
-           FRASE FECHA
+           INTRO CALENDARIO
            ========================= */
 
         .date-intro {
-
-            margin:
-                20px auto
-                30px;
-
             max-width: 720px;
 
-            text-align: center;
+            margin: 10px auto 38px;
 
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-family: "Cormorant Garamond", serif;
 
             font-style: italic;
 
             font-size:
                 clamp(
-                    1.3rem,
+                    1.35rem,
                     2vw,
-                    1.6rem
+                    1.65rem
                 );
 
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
+        /* =========================
+           HORARIOS RESUMEN
+           ========================= */
+
+        .schedule-summary {
+            width: min(760px, 100%);
+
+            margin-bottom: 30px;
+
+            padding: 26px 28px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.35);
+
+            border:
+                1px solid
+                rgba(255,255,255,.7);
+
+            backdrop-filter: blur(12px);
+
+            text-align: center;
+
+            box-shadow:
+                0 14px 40px
+                rgba(75,30,95,.08);
+        }
+
+        .schedule-summary h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-style: italic;
+
+            font-size: 2rem;
+
+            margin-bottom: 7px;
+        }
+
+        .schedule-summary > p {
+            font-size: .88rem;
+
+            opacity: .72;
+
+            margin-bottom: 18px;
+        }
+
+        .schedule-grid {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .schedule-pill {
+            padding: 9px 14px;
+
+            border-radius: 40px;
+
+            background:
+                rgba(128,76,150,.10);
+
+            font-size: .82rem;
+        }
+
+        .schedule-pill strong {
+            color: var(--purple-dark);
+        }
 
         /* =========================
            TARJETA CALENDARIO
            ========================= */
 
         .date-card {
-
-            width:
-                min(
-                    720px,
-                    100%
-                );
+            width: min(900px, 100%);
 
             padding: 35px;
 
             border:
                 1px solid
-                rgba(255,255,255,.7);
+                rgba(255,255,255,.72);
 
-            border-radius: 30px;
+            border-radius: 32px;
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .42
-                );
+                rgba(255,255,255,.46);
 
             backdrop-filter:
-                blur(15px);
+                blur(18px);
 
             box-shadow:
-                0 20px 60px
+                0 24px 65px
                 rgba(75,30,95,.12);
 
             text-align: center;
         }
 
-
-        .date-card h2 {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+        .date-card > h2 {
+            font-family: "Cormorant Garamond", serif;
 
             font-style: italic;
 
-            font-size: 2.5rem;
+            font-size: 2.7rem;
 
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
+        .date-card > .intro {
+            opacity: .75;
 
-        .date-card > p {
+            margin-bottom: 22px;
 
-            opacity: .8;
-
-            margin-bottom: 25px;
+            font-size: .9rem;
         }
 
+        /* =========================
+           PESTAÑAS DE MESES
+           ========================= */
 
-        .calendar {
+        .month-tabs {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-bottom: 24px;
+
+            flex-wrap: wrap;
+        }
+
+        .month-tab {
+            padding: 10px 18px;
+
+            border:
+                1px solid
+                rgba(103,55,120,.18);
+
+            border-radius: 40px;
+
+            background:
+                rgba(255,255,255,.42);
+
+            color: var(--purple);
+
+            font-family: "Montserrat", sans-serif;
+
+            cursor: pointer;
+
+            transition:
+                .2s ease;
+        }
+
+        .month-tab:hover {
+            background:
+                rgba(255,255,255,.75);
+        }
+
+        .month-tab.active {
+            background:
+                var(--purple-dark);
+
+            color: white;
+
+            border-color:
+                var(--purple-dark);
+        }
+
+        /* =========================
+           CALENDARIO
+           ========================= */
+
+        .calendar-wrapper {
+            width: min(530px, 100%);
+
+            margin: auto;
+        }
+
+        .calendar-title {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 1.9rem;
+
+            font-style: italic;
+
+            margin-bottom: 14px;
+        }
+
+        .calendar-weekdays,
+        .calendar-days {
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 7px;
+        }
+
+        .weekday {
+            padding: 7px 0;
+
+            font-size: .75rem;
+
+            font-weight: 600;
+
+            color:
+                rgba(75,19,92,.60);
+        }
+
+        .day {
+            aspect-ratio: 1;
 
             display: flex;
 
             flex-direction: column;
 
             align-items: center;
+            justify-content: center;
 
-            gap: 18px;
+            gap: 2px;
+
+            border: 0;
+
+            border-radius: 13px;
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: .86rem;
+
+            background: transparent;
+
+            color:
+                rgba(75,19,92,.27);
+
+            cursor: default;
+
+            position: relative;
         }
 
+        .day.empty {
+            visibility: hidden;
+        }
 
-        input[type="date"] {
+        .day.available {
+            color: var(--purple-dark);
 
-            width:
-                min(
-                    350px,
-                    100%
-                );
-
-            padding:
-                15px 20px;
-
-            font-family:
-                "Montserrat",
-                sans-serif;
-
-            font-size: 1rem;
-
-            color: #542561;
+            background:
+                rgba(160,108,181,.15);
 
             border:
                 1px solid
-                rgba(103,55,120,.25);
+                rgba(130,70,153,.12);
 
-            border-radius: 15px;
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition:
+                transform .16s ease,
+                background .16s ease,
+                box-shadow .16s ease;
+        }
+
+        .day.available:hover {
+            transform:
+                translateY(-2px);
 
             background:
-                rgba(255,255,255,.7);
-
-            outline: none;
-        }
-
-
-        input[type="date"]:focus {
-
-            border-color:
-                #9653aa;
+                rgba(160,108,181,.27);
 
             box-shadow:
-                0 0 0 4px
-                rgba(150,83,170,.1);
+                0 6px 16px
+                rgba(77,33,94,.10);
         }
 
+        .day.available::after {
+            content: "•";
 
-        textarea {
+            position: absolute;
+
+            bottom: 2px;
+
+            font-size: 1.1rem;
+
+            color:
+                var(--purple-medium);
+        }
+
+        .day.selected {
+            color: white;
+
+            background:
+                var(--purple-dark);
+
+            box-shadow:
+                0 8px 18px
+                rgba(75,19,92,.23);
+        }
+
+        .day.selected::after {
+            color:
+                rgba(255,255,255,.75);
+        }
+
+        .day.blocked {
+            color:
+                rgba(80,40,90,.28);
+
+            background:
+                rgba(130,100,130,.06);
+
+            text-decoration:
+                line-through;
+        }
+
+        .day.blocked::after {
+            content: "×";
+
+            position: absolute;
+
+            bottom: 1px;
+
+            color:
+                rgba(120,60,120,.28);
+
+            text-decoration: none;
+        }
+
+        /* =========================
+           LEYENDA
+           ========================= */
+
+        .legend {
+            margin: 20px auto 8px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+
+            font-size: .72rem;
+
+            color:
+                rgba(75,19,92,.62);
+        }
+
+        .legend-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 3px;
+        }
+
+        .legend-dot.available {
+            background:
+                rgba(160,108,181,.35);
+        }
+
+        .legend-dot.blocked {
+            background:
+                rgba(100,80,105,.12);
+        }
+
+        /* =========================
+           SESIONES
+           ========================= */
+
+        .session-area {
+            display: none;
+
+            margin-top: 30px;
+
+            padding-top: 28px;
+
+            border-top:
+                1px solid
+                rgba(100,50,120,.12);
+        }
+
+        .session-area.visible {
+            display: block;
+        }
+
+        .session-area h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 2rem;
+
+            font-style: italic;
+
+            margin-bottom: 4px;
+        }
+
+        #selectedDateText {
+            font-size: .85rem;
+
+            opacity: .68;
+
+            margin-bottom: 18px;
+        }
+
+        .session-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .session-button {
+            min-width: 115px;
+
+            padding: 13px 20px;
+
+            border:
+                1px solid
+                rgba(100,50,120,.20);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,.60);
+
+            color: var(--purple-dark);
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                .18s ease;
+        }
+
+        .session-button:hover {
+            background:
+                rgba(153,97,176,.15);
+
+            transform:
+                translateY(-1px);
+        }
+
+        .session-button.active {
+            background:
+                var(--purple-dark);
+
+            color: white;
+
+            border-color:
+                var(--purple-dark);
+        }
+
+        /* =========================
+           RESUMEN ELECCIÓN
+           ========================= */
+
+        .selection-summary {
+            display: none;
 
             width:
                 min(
-                    520px,
+                    550px,
                     100%
                 );
 
-            min-height: 85px;
+            margin:
+                25px auto 0;
+
+            padding:
+                17px 20px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(121,72,142,.09);
+
+            line-height: 1.5;
+        }
+
+        .selection-summary.visible {
+            display: block;
+        }
+
+        .selection-summary strong {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 1.35rem;
+
+            font-style: italic;
+        }
+
+        /* =========================
+           MENSAJE
+           ========================= */
+
+        .message-area {
+            width:
+                min(
+                    540px,
+                    100%
+                );
+
+            margin:
+                25px auto 0;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 84px;
 
             resize: vertical;
 
@@ -493,130 +846,101 @@
 
             border:
                 1px solid
-                rgba(103,55,120,.2);
+                rgba(103,55,120,.18);
 
-            border-radius: 15px;
+            border-radius: 16px;
 
             background:
-                rgba(255,255,255,.6);
+                rgba(255,255,255,.58);
+
+            color: var(--purple-dark);
 
             outline: none;
         }
 
-
         textarea:focus {
-
             border-color:
                 #9653aa;
-        }
 
+            box-shadow:
+                0 0 0 4px
+                rgba(150,83,170,.08);
+        }
 
         /* =========================
            WHATSAPP
            ========================= */
 
         .whatsapp {
-
             display: inline-flex;
 
             align-items: center;
-
             justify-content: center;
 
             gap: 10px;
 
             width:
                 min(
-                    370px,
+                    390px,
                     100%
                 );
 
-            padding:
-                15px 20px;
+            padding: 15px 22px;
 
-            margin-top: 5px;
+            margin-top: 18px;
 
-            border: none;
+            border: 0;
 
             border-radius: 50px;
-
-            font-family:
-                "Montserrat",
-                sans-serif;
-
-            font-size: 1rem;
-
-            font-weight: 600;
-
-            color: white;
 
             background:
                 linear-gradient(
                     135deg,
                     #25D366,
-                    #16a74c
+                    #18ad50
                 );
+
+            color: white;
+
+            font-family:
+                "Montserrat",
+                sans-serif;
+
+            font-size: .95rem;
+
+            font-weight: 600;
 
             cursor: pointer;
 
             box-shadow:
-                0 10px 25px
-                rgba(37,211,102,.25);
+                0 11px 26px
+                rgba(37,211,102,.22);
 
             transition:
-                transform .2s ease,
-                box-shadow .2s ease;
+                transform .18s ease,
+                box-shadow .18s ease;
         }
 
-
         .whatsapp:hover {
-
             transform:
                 translateY(-2px);
 
             box-shadow:
-                0 14px 30px
-                rgba(37,211,102,.32);
+                0 15px 32px
+                rgba(37,211,102,.30);
         }
-
-
-        .heart {
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
-
-            font-size: 2rem;
-
-            margin-top: 30px;
-
-            opacity: .75;
-        }
-
-
-        /* =========================
-           FRASE FINAL
-           ========================= */
 
         footer {
+            margin-top: 42px;
 
-            margin-top: 45px;
-
-            font-family:
-                "Cormorant Garamond",
-                serif;
+            font-family: "Cormorant Garamond", serif;
 
             font-style: italic;
 
-            font-size: 1.8rem;
+            font-size: 1.4rem;
 
-            font-weight: 600;
-
-            color: #602c72;
-
-            opacity: .85;
+            opacity: .65;
         }
-
 
         /* =========================
            MÓVIL
@@ -624,20 +948,16 @@
 
         @media (max-width: 700px) {
 
+            .page {
+                padding:
+                    42px 15px 50px;
+            }
+
             .background-photo {
-
                 width: 100%;
+                height: 58vh;
 
-                height: 60vh;
-
-                opacity: .13;
-
-                mask-image:
-                    linear-gradient(
-                        to bottom,
-                        black,
-                        transparent
-                    );
+                opacity: .12;
 
                 -webkit-mask-image:
                     linear-gradient(
@@ -645,149 +965,140 @@
                         black,
                         transparent
                     );
+
+                mask-image:
+                    linear-gradient(
+                        to bottom,
+                        black,
+                        transparent
+                    );
             }
 
-
-            .page {
-
-                padding-top: 45px;
-            }
-
-
-            .plans {
-
-                gap: 15px;
-            }
-
-
-            .plus {
-
+            .background-message {
                 display: none;
             }
 
-
-            .plan {
-
-                width: 140px;
+            .plans {
+                gap: 16px;
             }
 
+            .plus {
+                display: none;
+            }
+
+            .plan {
+                width: 135px;
+            }
 
             .poster {
-
                 width: 100%;
-
                 order: 3;
             }
 
-
             .poster img {
-
                 width: 145px;
-
                 height: 205px;
             }
 
-
             .date-card {
-
                 padding:
-                    28px 18px;
+                    26px 14px;
             }
 
+            .schedule-summary {
+                padding:
+                    22px 15px;
+            }
+
+            .schedule-grid {
+                gap: 8px;
+            }
+
+            .schedule-pill {
+                font-size: .75rem;
+
+                padding:
+                    8px 11px;
+            }
+
+            .calendar-days,
+            .calendar-weekdays {
+                gap: 4px;
+            }
+
+            .day {
+                border-radius: 10px;
+
+                font-size: .78rem;
+            }
+
+            .month-tab {
+                padding:
+                    9px 13px;
+
+                font-size: .78rem;
+            }
         }
 
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         FOTO DE VOSOTRAS
-         ========================= -->
-
+    <!-- Foto vuestra -->
     <img
         src="img/mama-y-yo.jpg"
         alt=""
         class="background-photo"
     >
 
+    <div class="background-message">
+        Te quiero mucho 💜
+    </div>
+
 
     <main class="page">
 
-
-        <!-- =========================
-             PRESENTACIÓN
-             ========================= -->
-
         <section class="hero">
-
 
             <h1>
                 ¡Feliz cumpleaños!
             </h1>
 
-
             <div class="divider"></div>
 
-
             <p class="subtitle">
-
                 ¡Nos vamos a pasar un día de regalo!
-
             </p>
-
 
             <p class="description">
-
                 Te espera un masaje relajante,
                 una visita a
-                <strong>
-                    La familia Addams: El musical
-                </strong>
-
+                <strong>La familia Addams: El musical</strong>
                 y, para terminar,
                 una cena por Madrid 🍽️✨
-
             </p>
 
 
-            <!-- =========================
-                 PLANES
-                 ========================= -->
-
             <div class="plans">
-
-
-                <!-- MASAJE -->
 
                 <div class="plan">
 
                     <div class="icon-circle">
-
                         🌸
-
                     </div>
 
-
                     <h3>
-
                         Masaje relajante
-
                     </h3>
 
                 </div>
 
 
                 <div class="plus">
-
                     +
-
                 </div>
 
-
-                <!-- ADDAMS -->
 
                 <div class="poster">
 
@@ -796,49 +1107,32 @@
                         alt="La familia Addams: El musical"
                     >
 
-
                     <p>
-
                         La familia Addams
-
                     </p>
 
                 </div>
 
 
                 <div class="plus">
-
                     +
-
                 </div>
 
-
-                <!-- CENA -->
 
                 <div class="plan">
 
                     <div class="icon-circle">
-
                         🍷
-
                     </div>
 
-
                     <h3>
-
                         Cena por Madrid
-
                     </h3>
 
                 </div>
 
-
             </div>
 
-
-            <!-- =========================
-                 TEXTO ELECCIÓN
-                 ========================= -->
 
             <p class="date-intro">
 
@@ -849,7 +1143,6 @@
                 <br><br>
 
                 así que esta parte
-
                 <strong>
                     te toca a ti.
                 </strong>
@@ -858,6 +1151,51 @@
 
             </p>
 
+        </section>
+
+
+        <!-- =========================
+             RESUMEN HORARIOS
+             ========================= -->
+
+        <section class="schedule-summary">
+
+            <h2>
+                Horarios del musical 🎭
+            </h2>
+
+            <p>
+                Para que puedas hacerte una idea antes de elegir.
+            </p>
+
+            <div class="schedule-grid">
+
+                <div class="schedule-pill">
+                    <strong>Miércoles</strong>
+                    · 19:00
+                </div>
+
+                <div class="schedule-pill">
+                    <strong>Jueves</strong>
+                    · 19:00
+                </div>
+
+                <div class="schedule-pill">
+                    <strong>Viernes</strong>
+                    · 17:00 · 21:00
+                </div>
+
+                <div class="schedule-pill">
+                    <strong>Sábados</strong>
+                    · 16:30 · 20:30
+                </div>
+
+                <div class="schedule-pill">
+                    <strong>Domingos</strong>
+                    · 16:00 · 19:30
+                </div>
+
+            </div>
 
         </section>
 
@@ -868,35 +1206,104 @@
 
         <section class="date-card">
 
-
             <h2>
-
-                Elige tu día
-
+                Elige nuestro día
             </h2>
 
-
-            <p>
-
-                Elige la fecha que mejor te venga.
-
+            <p class="intro">
+                Solo aparecen disponibles los días con función.
             </p>
 
 
-            <div class="calendar">
+            <div
+                class="month-tabs"
+                id="monthTabs"
+            ></div>
 
 
-                <!--
-                    SIN MIN NI MAX.
-                    Puede elegir cualquier fecha.
-                -->
+            <div class="calendar-wrapper">
 
-                <input
-                    type="date"
-                    id="fecha"
-                    required
-                >
+                <div
+                    class="calendar-title"
+                    id="calendarTitle"
+                ></div>
 
+
+                <div class="calendar-weekdays">
+
+                    <div class="weekday">L</div>
+                    <div class="weekday">M</div>
+                    <div class="weekday">X</div>
+                    <div class="weekday">J</div>
+                    <div class="weekday">V</div>
+                    <div class="weekday">S</div>
+                    <div class="weekday">D</div>
+
+                </div>
+
+
+                <div
+                    class="calendar-days"
+                    id="calendarDays"
+                ></div>
+
+            </div>
+
+
+            <div class="legend">
+
+                <div class="legend-item">
+
+                    <div class="legend-dot available"></div>
+
+                    Función disponible
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <div class="legend-dot blocked"></div>
+
+                    No disponible
+
+                </div>
+
+            </div>
+
+
+            <!-- SESIONES -->
+
+            <div
+                class="session-area"
+                id="sessionArea"
+            >
+
+                <h3>
+                    Elige sesión
+                </h3>
+
+                <p id="selectedDateText"></p>
+
+                <div
+                    class="session-buttons"
+                    id="sessionButtons"
+                ></div>
+
+            </div>
+
+
+            <!-- RESUMEN -->
+
+            <div
+                class="selection-summary"
+                id="selectionSummary"
+            ></div>
+
+
+            <!-- MENSAJE -->
+
+            <div class="message-area">
 
                 <textarea
                     id="mensaje"
@@ -904,123 +1311,913 @@
                     placeholder="Puedes dejarme un mensaje si quieres... 💜"
                 ></textarea>
 
-
-                <button
-                    class="whatsapp"
-                    onclick="enviarWhatsApp()"
-                >
-
-                    💬 Enviar mi elección por WhatsApp
-
-                </button>
-
-
             </div>
 
 
-            <div class="heart">
+            <!-- WHATSAPP -->
 
-                ♡
+            <button
+                class="whatsapp"
+                onclick="enviarWhatsApp()"
+            >
 
-            </div>
+                💬 Enviar mi elección por WhatsApp
 
+            </button>
 
         </section>
 
 
-        <!-- =========================
-             FRASE FINAL
-             ========================= -->
-
         <footer>
-
-            Te quiero mucho 💜
-
+            Un día para nosotras ♡
         </footer>
-
 
     </main>
 
 
     <script>
 
-        function enviarWhatsApp() {
+        /* =======================================
+           FUNCIONES DISPONIBLES
+           ======================================= */
+
+        const sesiones = {
+
+            /* SEPTIEMBRE */
+
+            "2026-09-18": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-09-19": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-09-20": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-09-24": [
+                "19:00"
+            ],
+
+            "2026-09-25": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-09-26": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-09-27": [
+                "16:00",
+                "19:30"
+            ],
 
 
-            /*
-             * FECHA ELEGIDA
-             */
+            /* OCTUBRE */
 
-            const fecha =
-                document
-                    .getElementById("fecha")
-                    .value;
+            "2026-10-01": [
+                "19:00"
+            ],
+
+            "2026-10-02": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-10-03": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-10-04": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-10-08": [
+                "19:00"
+            ],
+
+            "2026-10-09": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-10-10": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-10-11": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-10-14": [
+                "19:00"
+            ],
+
+            "2026-10-15": [
+                "19:00"
+            ],
+
+            "2026-10-16": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-10-17": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-10-18": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-10-22": [
+                "19:00"
+            ],
+
+            "2026-10-23": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-10-24": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-10-25": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-10-28": [
+                "19:00"
+            ],
+
+            "2026-10-29": [
+                "19:00"
+            ],
+
+            "2026-10-30": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-10-31": [
+                "16:30",
+                "20:30"
+            ],
 
 
-            /*
-             * MENSAJE OPCIONAL
-             */
+            /* NOVIEMBRE */
 
-            const mensajeExtra =
-                document
-                    .getElementById("mensaje")
-                    .value
-                    .trim();
+            "2026-11-01": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-11-05": [
+                "19:00"
+            ],
+
+            "2026-11-06": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-11-07": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-11-08": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-11-11": [
+                "19:00"
+            ],
+
+            "2026-11-12": [
+                "19:00"
+            ],
+
+            "2026-11-13": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-11-14": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-11-15": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-11-19": [
+                "19:00"
+            ],
+
+            "2026-11-20": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-11-21": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-11-22": [
+                "16:00",
+                "19:30"
+            ],
+
+            "2026-11-26": [
+                "19:00"
+            ],
+
+            "2026-11-27": [
+                "17:00",
+                "21:00"
+            ],
+
+            "2026-11-28": [
+                "16:30",
+                "20:30"
+            ],
+
+            "2026-11-29": [
+                "16:00",
+                "19:30"
+            ]
+
+        };
 
 
-            /*
-             * COMPROBAMOS QUE HAYA FECHA
-             */
+        /* =======================================
+           FECHAS QUE TÚ NO PUEDES
+           ======================================= */
 
-            if (!fecha) {
+        const fechasBloqueadas = new Set([
 
-                alert(
-                    "Primero tienes que elegir un día 💜"
+            "2026-09-26",
+
+            "2026-10-24",
+
+            "2026-11-18",
+            "2026-11-19",
+            "2026-11-20",
+            "2026-11-21",
+            "2026-11-22"
+
+        ]);
+
+
+        /* =======================================
+           MESES
+           ======================================= */
+
+        const meses = [
+
+            {
+                year: 2026,
+                month: 8,
+                name: "Septiembre"
+            },
+
+            {
+                year: 2026,
+                month: 9,
+                name: "Octubre"
+            },
+
+            {
+                year: 2026,
+                month: 10,
+                name: "Noviembre"
+            }
+
+        ];
+
+
+        let mesActual = 0;
+
+        let fechaSeleccionada = null;
+
+        let sesionSeleccionada = null;
+
+
+        /* =======================================
+           FORMATO FECHA
+           ======================================= */
+
+        function crearClaveFecha(
+            year,
+            month,
+            day
+        ) {
+
+            return (
+                year
+                + "-"
+                + String(month + 1)
+                    .padStart(2, "0")
+                + "-"
+                + String(day)
+                    .padStart(2, "0")
+            );
+
+        }
+
+
+        /* =======================================
+           PESTAÑAS
+           ======================================= */
+
+        function crearTabs() {
+
+            const contenedor =
+                document.getElementById(
+                    "monthTabs"
                 );
 
-                return;
+
+            contenedor.innerHTML = "";
+
+
+            meses.forEach(
+                (mes, index) => {
+
+                    const boton =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    boton.className =
+                        "month-tab"
+                        + (
+                            index === mesActual
+                                ? " active"
+                                : ""
+                        );
+
+
+                    boton.textContent =
+                        mes.name;
+
+
+                    boton.onclick =
+                        function() {
+
+                            mesActual = index;
+
+                            crearTabs();
+
+                            renderizarCalendario();
+
+                        };
+
+
+                    contenedor.appendChild(
+                        boton
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =======================================
+           CALENDARIO
+           ======================================= */
+
+        function renderizarCalendario() {
+
+            const mes =
+                meses[mesActual];
+
+
+            const titulo =
+                document.getElementById(
+                    "calendarTitle"
+                );
+
+
+            const contenedor =
+                document.getElementById(
+                    "calendarDays"
+                );
+
+
+            titulo.textContent =
+                mes.name
+                + " "
+                + mes.year;
+
+
+            contenedor.innerHTML = "";
+
+
+            const primerDia =
+                new Date(
+                    mes.year,
+                    mes.month,
+                    1
+                );
+
+
+            /*
+             * JS:
+             * domingo = 0
+             *
+             * Nosotros:
+             * lunes = 0
+             */
+
+            const offset =
+                (
+                    primerDia.getDay()
+                    + 6
+                )
+                % 7;
+
+
+            const totalDias =
+                new Date(
+                    mes.year,
+                    mes.month + 1,
+                    0
+                )
+                .getDate();
+
+
+            /*
+             * Espacios iniciales
+             */
+
+            for (
+                let i = 0;
+                i < offset;
+                i++
+            ) {
+
+                const vacio =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                vacio.className =
+                    "day empty";
+
+
+                contenedor.appendChild(
+                    vacio
+                );
+
             }
 
 
             /*
-             * CONVERTIMOS LA FECHA
-             *
-             * Ejemplo:
-             *
-             * 2026-09-21
-             *
-             * pasa a:
-             *
-             * lunes, 21 de septiembre
+             * Días
              */
 
-            const fechaElegida =
+            for (
+                let dia = 1;
+                dia <= totalDias;
+                dia++
+            ) {
+
+                const clave =
+                    crearClaveFecha(
+                        mes.year,
+                        mes.month,
+                        dia
+                    );
+
+
+                const boton =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                boton.className =
+                    "day";
+
+
+                boton.textContent =
+                    dia;
+
+
+                const tieneFuncion =
+                    sesiones[clave];
+
+
+                const bloqueada =
+                    fechasBloqueadas
+                        .has(clave);
+
+
+                /*
+                 * FECHA BLOQUEADA
+                 */
+
+                if (bloqueada) {
+
+                    boton.classList.add(
+                        "blocked"
+                    );
+
+                    boton.title =
+                        "Este día no está disponible";
+
+                }
+
+
+                /*
+                 * FECHA CON FUNCIÓN
+                 */
+
+                else if (tieneFuncion) {
+
+                    boton.classList.add(
+                        "available"
+                    );
+
+
+                    if (
+                        fechaSeleccionada
+                        === clave
+                    ) {
+
+                        boton.classList.add(
+                            "selected"
+                        );
+
+                    }
+
+
+                    boton.onclick =
+                        function() {
+
+                            seleccionarFecha(
+                                clave
+                            );
+
+                        };
+
+                }
+
+
+                /*
+                 * SIN FUNCIÓN
+                 */
+
+                else {
+
+                    boton.disabled =
+                        true;
+
+                }
+
+
+                contenedor.appendChild(
+                    boton
+                );
+
+            }
+
+        }
+
+
+        /* =======================================
+           SELECCIONAR FECHA
+           ======================================= */
+
+        function seleccionarFecha(clave) {
+
+            fechaSeleccionada =
+                clave;
+
+
+            /*
+             * Al cambiar de fecha,
+             * borramos la sesión anterior.
+             */
+
+            sesionSeleccionada =
+                null;
+
+
+            renderizarCalendario();
+
+
+            mostrarSesiones();
+
+        }
+
+
+        /* =======================================
+           MOSTRAR SESIONES
+           ======================================= */
+
+        function mostrarSesiones() {
+
+            const area =
+                document.getElementById(
+                    "sessionArea"
+                );
+
+
+            const botones =
+                document.getElementById(
+                    "sessionButtons"
+                );
+
+
+            const textoFecha =
+                document.getElementById(
+                    "selectedDateText"
+                );
+
+
+            const resumen =
+                document.getElementById(
+                    "selectionSummary"
+                );
+
+
+            area.classList.add(
+                "visible"
+            );
+
+
+            resumen.classList.remove(
+                "visible"
+            );
+
+
+            botones.innerHTML =
+                "";
+
+
+            const fecha =
                 new Date(
-                    fecha + "T12:00:00"
+                    fechaSeleccionada
+                    + "T12:00:00"
                 );
 
 
             const fechaBonita =
-                fechaElegida
-                    .toLocaleDateString(
-                        "es-ES",
-                        {
-                            weekday: "long",
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric"
-                        }
+                fecha.toLocaleDateString(
+                    "es-ES",
+                    {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long"
+                    }
+                );
+
+
+            textoFecha.textContent =
+                capitalizar(
+                    fechaBonita
+                );
+
+
+            sesiones[
+                fechaSeleccionada
+            ]
+            .forEach(
+                hora => {
+
+                    const boton =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    boton.className =
+                        "session-button";
+
+
+                    boton.textContent =
+                        hora;
+
+
+                    boton.onclick =
+                        function() {
+
+                            seleccionarSesion(
+                                hora
+                            );
+
+                        };
+
+
+                    botones.appendChild(
+                        boton
                     );
+
+                }
+            );
 
 
             /*
-             * MENSAJE DE WHATSAPP
+             * Desplazamiento suave
              */
+
+            area.scrollIntoView(
+                {
+                    behavior: "smooth",
+                    block: "nearest"
+                }
+            );
+
+        }
+
+
+        /* =======================================
+           SELECCIONAR SESIÓN
+           ======================================= */
+
+        function seleccionarSesion(hora) {
+
+            sesionSeleccionada =
+                hora;
+
+
+            const botones =
+                document.querySelectorAll(
+                    ".session-button"
+                );
+
+
+            botones.forEach(
+                boton => {
+
+                    boton.classList.toggle(
+                        "active",
+                        boton.textContent
+                            === hora
+                    );
+
+                }
+            );
+
+
+            mostrarResumen();
+
+        }
+
+
+        /* =======================================
+           RESUMEN
+           ======================================= */
+
+        function mostrarResumen() {
+
+            const resumen =
+                document.getElementById(
+                    "selectionSummary"
+                );
+
+
+            const fecha =
+                new Date(
+                    fechaSeleccionada
+                    + "T12:00:00"
+                );
+
+
+            const fechaBonita =
+                fecha.toLocaleDateString(
+                    "es-ES",
+                    {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long"
+                    }
+                );
+
+
+            resumen.innerHTML =
+                "<strong>Tu elección 💜</strong>"
+                + "<br>"
+                + capitalizar(
+                    fechaBonita
+                )
+                + " · "
+                + sesionSeleccionada;
+
+
+            resumen.classList.add(
+                "visible"
+            );
+
+        }
+
+
+        /* =======================================
+           CAPITALIZAR
+           ======================================= */
+
+        function capitalizar(texto) {
+
+            return (
+                texto.charAt(0)
+                    .toUpperCase()
+                + texto.slice(1)
+            );
+
+        }
+
+
+        /* =======================================
+           WHATSAPP
+           ======================================= */
+
+        function enviarWhatsApp() {
+
+            if (
+                !fechaSeleccionada
+            ) {
+
+                alert(
+                    "Primero elige un día 💜"
+                );
+
+                return;
+
+            }
+
+
+            if (
+                !sesionSeleccionada
+            ) {
+
+                alert(
+                    "Ahora elige la sesión del musical 🎭"
+                );
+
+                return;
+
+            }
+
+
+            const fecha =
+                new Date(
+                    fechaSeleccionada
+                    + "T12:00:00"
+                );
+
+
+            const fechaBonita =
+                fecha.toLocaleDateString(
+                    "es-ES",
+                    {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric"
+                    }
+                );
+
+
+            const mensajeExtra =
+                document
+                    .getElementById(
+                        "mensaje"
+                    )
+                    .value
+                    .trim();
+
 
             let texto =
 `💜 ¡Ya he elegido fecha para mi regalo!
 
-📅 Me viene bien el ${fechaBonita}.
+📅 ${capitalizar(fechaBonita)}
+🎭 Sesión de las ${sesionSeleccionada}
 
 🌸 Masaje relajante
 🎭 La familia Addams
@@ -1029,21 +2226,18 @@
 ✨ ¡Planazo!`;
 
 
-            /*
-             * AÑADIMOS MENSAJE OPCIONAL
-             */
-
-            if (mensajeExtra) {
+            if (
+                mensajeExtra
+            ) {
 
                 texto +=
-`\n\n💌 ${mensajeExtra}`;
+                    "\n\n💌 "
+                    + mensajeExtra;
 
             }
 
 
             /*
-             * TU NÚMERO:
-             *
              * +34 664 100 331
              */
 
@@ -1051,20 +2245,14 @@
                 "34664100331";
 
 
-            /*
-             * GENERAMOS EL ENLACE
-             */
-
             const url =
                 "https://wa.me/"
                 + telefono
                 + "?text="
-                + encodeURIComponent(texto);
+                + encodeURIComponent(
+                    texto
+                );
 
-
-            /*
-             * ABRIMOS WHATSAPP
-             */
 
             window.open(
                 url,
@@ -1073,8 +2261,16 @@
 
         }
 
-    </script>
 
+        /* =======================================
+           INICIO
+           ======================================= */
+
+        crearTabs();
+
+        renderizarCalendario();
+
+    </script>
 
 </body>
 </html>
